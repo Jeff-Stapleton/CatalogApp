@@ -1,0 +1,27 @@
+.item {
+    height: 55px;
+    width: 100%;
+    margin: 5px;
+}
+
+.name {
+    position: absolute;
+    left: 5px;
+    top: 0px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.quantity {
+    position: absolute;
+    right: 5px;
+    top: 0px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.description {
+    position: absolute;
+    left: 5px;
+    bottom: 0px;
+}

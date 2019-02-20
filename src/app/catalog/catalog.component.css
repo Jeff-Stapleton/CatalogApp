@@ -1,0 +1,28 @@
+.catalog-list {
+    height: 95vh;
+    width: 100%;
+    border: 1px solid #d3d3d3;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .fab {
+    position: absolute;
+    right: 35px;
+    bottom: 35px;
+    font-size: 25px;
+  }
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3B90FA; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6daeff; 
+}
