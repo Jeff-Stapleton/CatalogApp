@@ -1,14 +1,17 @@
 <cdk-virtual-scroll-viewport class="catalog-list" itemSize="60">
   <dl class="example-dl">
-    <ng-container *cdkVirtualFor="let product of products">
-      <dt>
-        <app-product name="{{product.name}}"
-                     quantity="{{product.quantity}}"
-                     description="{{product.description}}"></app-product>
-      </dt>
-      <!-- <dt class="example-dt">{{product.name}}</dt>
-      <dd class="example-dd">{{product.description}}</dd> -->
-    </ng-container>
+    <div *ngIf="products.length > 0">
+      <ng-container *cdkVirtualFor="let product of products">
+        <dt>
+          <app-product name="{{product.name}}"
+                      quantity="{{product.quantity}}"
+                      description="{{product.description}}"></app-product>
+        </dt>
+      </ng-container>
+    </div>
+    <div *ngIf="products.length == 0" class="empty-list">
+      Sorry there are no products.
+    </div>
   </dl>
 </cdk-virtual-scroll-viewport>
-<button mat-fab class="fab">+</button>
+<button mat-fab class="fab" (click)="openDialog()">+</button>
