@@ -1,7 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';  
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -28,7 +28,8 @@ import { AddProductComponent } from './modals/add-product/add-product.component'
     CommonModule,
     FormsModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ],
   entryComponents: [AddProductComponent],
   providers: [],

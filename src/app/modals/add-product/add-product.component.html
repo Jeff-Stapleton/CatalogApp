@@ -1,16 +1,23 @@
 <h1 mat-dialog-title>Add new product to catalog</h1>
+
 <div mat-dialog-content>
-  <mat-form-field>
-    <input matInput [(ngModel)]="data.name" placeholder="Name">
+  <mat-form-field class="left-input">
+    <input matInput placeholder="Name" [formControl]="nameController" [(ngModel)]="data.name"/>
+    <mat-error *ngIf="nameController.hasError('required')">Name is required</mat-error>
   </mat-form-field>
-  <mat-form-field>
-      <input matInput [(ngModel)]="data.description" placeholder="Description (optional)">
-  </mat-form-field>
-  <mat-form-field>
-      <input matInput type="number" [(ngModel)]="data.quantity" placeholder="Quantity">
+  <mat-form-field class="right-input">
+    <input matInput type="number" placeholder="Quantity" [formControl]="quantityController" [(ngModel)]="data.quantity" />
+    <mat-error *ngIf="quantityController.hasError('required')">Quantity is required</mat-error>
   </mat-form-field>
 </div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+
+<div mat-dialog-content>
+  <mat-form-field class="input-field">
+    <textarea matInput [(ngModel)]="data.description" placeholder="Description (optional)"> </textarea>
+  </mat-form-field>
+</div>
+
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial (click)="onYesClick()">Add</button>
 </div>

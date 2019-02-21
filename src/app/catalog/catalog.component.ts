@@ -45,7 +45,7 @@ export class CatalogComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddProductComponent, {
-      height: '400px',
+      height: '300px',
       width: '600px',
       data: new Product()
     });
