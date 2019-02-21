@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse, HttpParameterCodec } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { Product } from '../models/product.model';
 
@@ -7,17 +7,16 @@ import { Product } from '../models/product.model';
   providedIn: 'root'
 })
 export class ProductService {
-  private apiUrl = "http://localhost:5000/api/product"
+  private apiUrl = 'http://localhost:5000/api/product';
 
   constructor(public http: HttpClient) { }
 
-  public create<T>(product: Product): Observable<T>
-  {
-    return this.http.post<T>(this.apiUrl, product);
+  public create(product: Product): Observable<HttpResponse<string>> {
+    return this.http.post(this.apiUrl, product,
+      { observe: 'response', responseType: 'text' });
   }
 
-  public read<T>(): Observable<T>
-  {
+  public read<T>(): Observable<T> {
     return this.http.get<T>(this.apiUrl);
   }
 }

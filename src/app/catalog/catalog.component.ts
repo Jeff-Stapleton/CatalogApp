@@ -24,7 +24,7 @@ export class CatalogComponent implements OnInit {
   //   // { name: "Product 9", description: "Description 9", quantity: 9 },
   // ];
 
-  constructor(public productService:ProductService,
+  constructor(public productService: ProductService,
               public dialog: MatDialog) { }
 
   ngOnInit() {
@@ -34,13 +34,7 @@ export class CatalogComponent implements OnInit {
   getProducts() {
     this.productService.read<Product[]>().subscribe(productList => {
       this.products = productList;
-    })
-  }
-
-  createProduct(newProduct: Product) {
-    this.productService.create<Product>(newProduct).subscribe(productResult => {
-      this.getProducts();
-    })
+    });
   }
 
   openDialog(): void {
@@ -51,8 +45,7 @@ export class CatalogComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.createProduct(result)
+      this.getProducts();
     });
   }
 
