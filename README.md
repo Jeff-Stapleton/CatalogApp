@@ -1,6 +1,6 @@
 # CatalogApp
 
-## Prerequisits 
+## Prerequisites 
 
 Install "yarn" or "npm"
 
