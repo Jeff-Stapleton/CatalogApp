@@ -9,8 +9,8 @@
         </dt>
       </ng-container>
     </div>
-    <div *ngIf="products.length == 0" class="empty-list">
-      Sorry there are no products.
+    <div class="mat-body empty-list" *ngIf="products.length == 0">
+      Sorry, there are no products.
     </div>
   </dl>
 </cdk-virtual-scroll-viewport>
